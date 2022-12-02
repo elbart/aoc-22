@@ -1,15 +1,10 @@
 use std::collections::BinaryHeap;
-use std::fs::File;
-use std::io::{self, BufReader, Read};
 use std::time::Instant;
 
 use crate::Timing;
 
-pub fn run() -> io::Result<Timing> {
-    let f = File::open("./input/01/input.txt")?;
-    let mut reader = BufReader::new(f);
-    let mut buffer = String::new();
-    reader.read_to_string(&mut buffer)?;
+pub fn run() -> std::io::Result<Timing> {
+    let buffer = include_str!("../input/01/input.txt");
 
     // split by double newline first, to create an iterator over each group of calories
     let start = Instant::now();

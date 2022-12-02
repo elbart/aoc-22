@@ -1,9 +1,10 @@
 use std::time::Duration;
 use termion::{color, style};
 mod day_01;
+mod day_02;
 
 pub fn days() -> Vec<fn() -> std::io::Result<Timing>> {
-    vec![day_01::run]
+    vec![day_01::run, day_02::run]
 }
 
 pub struct Timing(Duration, Duration);
