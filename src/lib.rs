@@ -3,14 +3,15 @@ use termion::{color, style};
 mod day_01;
 mod day_02;
 mod day_03;
+mod day_04;
 
 pub fn days() -> Vec<fn() -> std::io::Result<Timing>> {
-    vec![day_01::run, day_02::run, day_03::run]
+    vec![day_01::run, day_02::run, day_03::run, day_04::run]
 }
 
 pub struct Timing(Duration, Duration);
 
-pub fn run(day: usize, f: fn() -> std::io::Result<Timing>) -> std::io::Result<()> {
+pub fn run(day: usize, f: fn() -> std::io::Result<Timing>) -> std::io::Result<Duration> {
     println!(
         "{}-------------------- BEGIN Day {:02} --------------------{}",
         style::Bold,
@@ -41,5 +42,5 @@ pub fn run(day: usize, f: fn() -> std::io::Result<Timing>) -> std::io::Result<()
         style::Reset
     );
 
-    Ok(())
+    Ok(timing.0 + timing.1)
 }
