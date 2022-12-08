@@ -4,9 +4,16 @@ mod day_01;
 mod day_02;
 mod day_03;
 mod day_04;
+mod day_05;
 
 pub fn days() -> Vec<fn() -> std::io::Result<Timing>> {
-    vec![day_01::run, day_02::run, day_03::run, day_04::run]
+    vec![
+        day_01::run,
+        day_02::run,
+        day_03::run,
+        day_04::run,
+        day_05::run,
+    ]
 }
 
 pub struct Timing(Duration, Duration);
